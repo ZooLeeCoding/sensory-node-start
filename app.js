@@ -15,7 +15,7 @@ var router = express.Router();
 
 //definiálom a route-okat
 router.get('/about', function (req, res) {
-  res.send('Ez egy minta')
+  res.send({"message": 'Ez egy minta'})
 });
 
 router.post('/about', function(req, res) {
@@ -23,9 +23,9 @@ router.post('/about', function(req, res) {
     + " " + req.body.age + " éves vagyok és " + 
     req.body.foglalkozas);
     if(req.body.foglalkozas) {
-        return res.status(200).send("Köszönöm az infót");
+        return res.status(200).send({"message": "Köszönöm az infót"});
     }
-    return res.status(404).send("Ne aggodj valojaban minden oké");
+    return res.status(404).send({"message": "Ne aggodj valojaban minden oké"});
 });
 
 //élesítem a route-okat
